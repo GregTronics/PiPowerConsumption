@@ -10,4 +10,6 @@ import smbus as smbus
 i2c = smbus.SMBus(1)
 
 i2c.write_quick(i2c_addr)
-i2c.read_byte(i2c_addr)
+print("Sending byte to " + i2c_addr)
+print "Received back: " + i2c.read_byte(i2c_addr)
+
