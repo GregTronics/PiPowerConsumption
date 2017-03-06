@@ -8,6 +8,7 @@ GAIN = 1
 
 logName = raw_input('Please enter a filename to log the data to: ')
 logName = logName + '.txt'
+sampleRate = raw_input('Please enter the sample rate (in milliseconds, 10 minimum): ')
 fout = open(logName, 'w')
 print('Reading ADS1x15 values, press Ctrl-C to quit...')
 # Print nice channel column headers.
@@ -34,6 +35,7 @@ while True:
     fout.write('\n')
     
     # Pause for half a second.
-    # time.sleep(0.1)
+    if(sampleRate > 10)
+        time.sleep(sampleRate/100)
 
 fout.close()
