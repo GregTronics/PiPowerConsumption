@@ -36,6 +36,6 @@ while True:
     
     # Pause for half a second.
     if sampleRate > 10:
-        time.sleep(sampleRate/100)
+        time.sleep(int(sampleRate)/100)
 
 fout.close()
