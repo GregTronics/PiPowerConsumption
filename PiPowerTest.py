@@ -29,7 +29,7 @@ while True:
     # Print the ADC values.
     print('| {0:>6} | {1:>6} | {2:>6} | {3:>6} |'.format(*values))
     fout = open(logName, 'w')
-    fout.write(str(format(*values)))
+    fout.write(values[0] + ',' + values[1] + ',' + values[2] + ',' + values[3])
     fout.write('\n')
     fout.close()
     
