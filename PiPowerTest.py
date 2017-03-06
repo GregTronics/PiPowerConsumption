@@ -1,5 +1,5 @@
 import time
-import datetime
+
 import Adafruit_ADS1x15
 
 adc = Adafruit_ADS1x15.ADS1015()
@@ -29,13 +29,11 @@ while True:
         # ADC (ADS1015 = 12-bit, ADS1115 = 16-bit).
     # Print the ADC values.
     print('| {0:>6} | {1:>6} | {2:>6} | {3:>6} |'.format(*values))
-    curTime = datetime.time()
     
-    fout.write(str(curTime) + ',' + str(values[0]) + ',' + str(values[1]) + ',' + str(values[2]) + ',' + str(values[3]))
+    fout.write(str(time.time()) + ',' + str(values[0]) + ',' + str(values[1]) + ',' + str(values[2]) + ',' + str(values[3]))
     fout.write('\n')
     
-    
     # Pause for half a second.
-    time.sleep(0.1)
+    # time.sleep(0.1)
 
 fout.close()
