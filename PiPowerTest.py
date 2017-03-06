@@ -35,7 +35,7 @@ while True:
     fout.write('\n')
     
     # Pause for half a second.
-    if(sampleRate > 10)
+    if sampleRate > 10
         time.sleep(sampleRate/100)
 
 fout.close()
