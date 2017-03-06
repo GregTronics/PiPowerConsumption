@@ -6,6 +6,8 @@ adc = Adafruit_ADS1x15.ADS1015()
 
 GAIN = 1
 
+logName = raw_input('Please enter a filename to log the data to: ')
+logName = logName + '.txt'
 print('Reading ADS1x15 values, press Ctrl-C to quit...')
 # Print nice channel column headers.
 print('| {0:>6} | {1:>6} | {2:>6} | {3:>6} |'.format(*range(4)))
@@ -26,6 +28,11 @@ while True:
         # ADC (ADS1015 = 12-bit, ADS1115 = 16-bit).
     # Print the ADC values.
     print('| {0:>6} | {1:>6} | {2:>6} | {3:>6} |'.format(*values))
+    fout = open(logName, 'w')
+    fout.write(format(*values))
+    fout.write('\n')
+    fout.close()
+    
     # Pause for half a second.
     time.sleep(0.5)
 
